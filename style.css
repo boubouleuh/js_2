@@ -117,9 +117,13 @@ main
     transform-origin: 20px;
     transform: rotate(180deg);
 }
+#btn-more svg:hover
+{
+   cursor:pointer;
+}
 /*Div more*/
 #more{
-    display:flex;
+    display:none;
     position:absolute;
     bottom:0;
     transform:translateY(100px);
