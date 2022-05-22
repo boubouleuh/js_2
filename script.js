@@ -23,6 +23,8 @@ var regionCity = document.getElementById('regionCity');
 var dayYear = document.getElementById('dayYear');
 var dayWeek = document.getElementById('dayWeek');
 var weekNumber = document.getElementById('weekNumber');
+var btnMore = document.getElementById('btn-more');
+var divMore = document.getElementById('more');
 
 // TIME API
 fetch('http://worldtimeapi.org/api/ip')
@@ -68,3 +70,12 @@ fetch('http://worldtimeapi.org/api/ip')
     dayWeek.innerHTML = dayWeekData;
     weekNumber.innerHTML = weekNumberData;
 });
+
+// Fonction bouton "More"
+btnMore.addEventListener("click", () => {
+    if(getComputedStyle(divMore).display != "none"){
+    divMore.style.display = "none";
+    } else {
+    divMore.style.display = "flex";
+    }
+})
