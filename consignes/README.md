@@ -35,4 +35,3 @@ Your task is to build out the project to the design file provided. We provide Fi
 All the required assets for this project are in the `/assets` folder. The assets are already exported for the correct screen size and optimized. Some images are reusable at multiple screen sizes. So if you don't see an image in a specific folder, it will typically be in another folder for that page.
 
 The design system in the design file will give you more information about the various colors, fonts, and styles used in this project.
-
