@@ -1,6 +1,4 @@
-var time = document.getElementById('time');
-var region = document.getElementById('region');
-var abbr = document.getElementById('abbr');
+// Quote API
 var topDesc = document.getElementById('topdesc');
 var authContent = document.getElementById('author');
 
@@ -15,28 +13,37 @@ fetch('https://api.quotable.io/random')
     console.log(author, content);
 });
 
+// TIME components 
 
-    fetch('http://worldtimeapi.org/api/ip')
-    .then(response=>{
-        return response.json();
-    }).then(json=> {
+// Récupération des elements HTML :
+var time = document.getElementById('time');
+var region = document.getElementById('region');
+var abbr = document.getElementById('abbr');
+var regionCity = document.getElementById('regionCity');
+var dayYear = document.getElementById('dayYear');
+var dayWeek = document.getElementById('dayWeek');
+var weekNumber = document.getElementById('weekNumber');
+
+// TIME API
+fetch('http://worldtimeapi.org/api/ip')
+.then(response=>{
+    return response.json();
+})
+.then(json=> {
         console.log(json);
         
     const timeZone = json.timezone; // Region
     const abbreviation = json.abbreviation; // Meridian time
-    const dayWeek = json.day_of_week;
-    const dayYear = json.day_of_year;
-    const weekNumber = json.week_number;
+    const dayWeekData = json.day_of_week;
+    const dayYearData = json.day_of_year;
+    const weekNumberData = json.week_number;
     
     // Fonction pour convertir unixtime
     // Create a new JavaScript Date object based on the timestamp
     // multiplied by 1000 so that the argument is in milliseconds, not seconds.
-        
 
     function afficherDate() {
-    
         const unixTime = json.unixtime; // Unix time
-
             var date = new Date(unixTime * 1000);
             // Hours part from the timestamp
             var hours = date.getHours();
@@ -47,8 +54,7 @@ fetch('https://api.quotable.io/random')
 
             // Will display time in 10:30(:23) format
             var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
-            time.innerText = formattedTime; 
-            
+            time.innerText = formattedTime;  
             console.log(afficherDate);
     }
     setInterval(() => {
@@ -57,4 +63,8 @@ fetch('https://api.quotable.io/random')
 
     region.innerText = timeZone;
     abbr.innerText = abbreviation;
-    });
+    regionCity.innerText = timeZone;
+    dayYear.innerText = dayYearData;
+    dayWeek.innerHTML = dayWeekData;
+    weekNumber.innerHTML = weekNumberData;
+});
