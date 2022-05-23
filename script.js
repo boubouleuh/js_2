@@ -2,19 +2,22 @@
 var topDesc = document.getElementById('topdesc');
 var authContent = document.getElementById('author');
 var btnRefresh = document.getElementById('refresh');
-btnRefresh.addEventListener('click');
-// Quote API fetch
 
-fetch('https://api.quotable.io/random')
-.then(response=>{
-    return response.json();
-}).then(json=> {
-    const content = json.content;
-    const author = json.author;
-    topDesc.innerText = content;
-    authContent.innerText = author;
-    console.log(author, content);
-});
+// Quote API Fetch and refresh with function call
+quotable()
+function quotable(params) {
+    fetch('https://api.quotable.io/random')
+    .then(response=>{
+        return response.json();
+    }).then(json=> {
+        const content = json.content;
+        const author = json.author;
+        topDesc.innerText = content;
+        authContent.innerText = author;
+        console.log(author, content);
+    });
+}
+btnRefresh.addEventListener("click", quotable);
 
 // TIME components 
 // Récupération des elements HTML :
