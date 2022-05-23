@@ -15,10 +15,6 @@ body
 {
     overflow: hidden;
     position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top:0;
     z-index: -1;
     width: 100%;
     height: 100%;
@@ -34,12 +30,11 @@ main
     justify-content: center;
     flex-direction: column;
     height:100vh;
-    width: 100%;
 }
 
 #top {
     display: flex;
-    width: 77%;
+    width:100%;
     color: white;
 }
 
@@ -62,6 +57,7 @@ main
 {
     display: grid;
     grid-template-columns: auto max-content;
+    width:100%;
     text-transform: uppercase;
     color:white;
 }
@@ -95,7 +91,6 @@ main
 {
     grid-column: 2;
     color:black;
-    justify-self: end;
     align-self: flex-end;
 }
 #btn-more
@@ -103,7 +98,6 @@ main
     display: flex;
     align-items: center;
     font-weight: bold;
-    margin-right: 10.3125rem;
     border-radius: 28px;
     background-color: white;
 
