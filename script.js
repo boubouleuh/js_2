@@ -1,6 +1,9 @@
 // Quote API
 var topDesc = document.getElementById('topdesc');
 var authContent = document.getElementById('author');
+var btnRefresh = document.getElementById('refresh');
+btnRefresh.addEventListener('click');
+// Quote API fetch
 
 fetch('https://api.quotable.io/random')
 .then(response=>{
@@ -14,7 +17,6 @@ fetch('https://api.quotable.io/random')
 });
 
 // TIME components 
-
 // Récupération des elements HTML :
 var time = document.getElementById('time');
 var region = document.getElementById('region');

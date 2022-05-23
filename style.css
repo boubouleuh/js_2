@@ -53,6 +53,9 @@ main
     margin-top:5px;
     margin-left: 15px;
 }
+#refresh:hover{
+    cursor:pointer;
+}
 #bottom
 {
     display: grid;
