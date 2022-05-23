@@ -78,9 +78,15 @@ fetch('http://worldtimeapi.org/api/ip')
 
 // Fonction bouton "More"
 btnMore.addEventListener("click", () => {
-    if(getComputedStyle(divMore).display != "none"){
-    divMore.style.display = "none";
+    if(getComputedStyle(divMore).visibility != "hidden"){
+    divMore.style.visibility = "hidden";
+    divMore.style.opacity = "0";
+    divMore.style.marginBottom = "-1000px"
+    btnMore.style.marginBottom = "0px";
     } else {
-    divMore.style.display = "flex";
+    divMore.style.visibility = "visible";
+    divMore.style.opacity = "100";
+    divMore.style.marginBottom = "0px"
+    btnMore.style.marginBottom = "250px";
     }
 })

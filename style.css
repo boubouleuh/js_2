@@ -98,6 +98,7 @@ main
 }
 #btn-more
 {
+    transition: 500ms;
     display: flex;
     align-items: center;
     font-weight: bold;
@@ -123,7 +124,10 @@ main
 }
 /*Div more*/
 #more{
-    display:none;
+    margin-bottom: -1000px;
+    transition: 500ms;
+    opacity: 0;
+    visibility: hidden;
     position:absolute;
     bottom:0;
     background-color:#979797;
