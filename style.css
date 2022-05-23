@@ -26,6 +26,7 @@ body
 
 main
 {
+    transition: 500ms;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,6 +35,7 @@ main
 }
 
 #top {
+    transition: 500ms;
     display: flex;
     width:100%;
     color: white;
@@ -125,13 +127,14 @@ main
 }
 /*Div more*/
 #more{
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(40.7742px);
     margin-bottom: -1000px;
     transition: 500ms;
     opacity: 0;
     visibility: hidden;
     position:absolute;
     bottom:0;
-    background-color:#979797;
     height:50vh;
     width:100%
 }
