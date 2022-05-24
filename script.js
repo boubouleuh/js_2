@@ -2,7 +2,6 @@
 var topDesc = document.getElementById('topdesc');
 var authContent = document.getElementById('author');
 var btnRefresh = document.getElementById('refresh');
-
 // Quote API Fetch and refresh with function call
 quotable()
 function quotable(params) {
@@ -30,7 +29,8 @@ var dayWeek = document.getElementById('dayWeek');
 var weekNumber = document.getElementById('weekNumber');
 var btnMore = document.getElementById('btn-more');
 var divMore = document.getElementById('more');
-
+var divMain = document.getElementById('main');
+var divTop = document.getElementById('top');
 // TIME API
 fetch('http://worldtimeapi.org/api/ip')
 .then(response=>{
@@ -83,10 +83,15 @@ btnMore.addEventListener("click", () => {
     divMore.style.opacity = "0";
     divMore.style.marginBottom = "-1000px"
     btnMore.style.marginBottom = "0px";
+    divMain.style.height= "100vh";
+    divTop.style.opacity = "100";
+    divTop.style.visibility = "visible";
     } else {
     divMore.style.visibility = "visible";
-    divMore.style.opacity = "100";
-    divMore.style.marginBottom = "0px"
-    btnMore.style.marginBottom = "250px";
+    divMore.style.opacity = "90%";
+    divMore.style.marginBottom = "0px";
+    divMain.style.height = "40vh";
+    divTop.style.opacity = "0";
+    divTop.style.visibility = "hidden";
     }
 })
