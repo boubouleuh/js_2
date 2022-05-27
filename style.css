@@ -119,13 +119,16 @@ main
 }
 #btn-more svg
 {
+    transition: 1000ms;
+    fill:#303030;
     padding-right: 10px;
     transform-origin: 20px;
     transform: rotate(180deg);
 }
 #btn-more svg:hover
 {
-   cursor:pointer;
+    fill:#999999;
+    cursor:pointer;
 }
 /*Div more*/
 #more{

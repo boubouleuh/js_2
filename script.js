@@ -31,6 +31,7 @@ var btnMore = document.getElementById('btn-more');
 var divMore = document.getElementById('more');
 var divMain = document.getElementById('main');
 var divTop = document.getElementById('top');
+var arrow = document.getElementById("arrow")
 // TIME API
 fetch('http://worldtimeapi.org/api/ip')
 .then(response=>{
@@ -86,6 +87,7 @@ btnMore.addEventListener("click", () => {
     divTop.style.opacity = "100";
     divTop.style.visibility = "visible";
     divMain.style.marginTop = "56px"
+    arrow.style.transform = "rotate(180deg)"
     } else {
     divMore.style.visibility = "visible";
     divMore.style.opacity = "90%";
@@ -93,5 +95,6 @@ btnMore.addEventListener("click", () => {
     divTop.style.opacity = "0";
     divTop.style.visibility = "hidden";
     divMain.style.marginTop = "-150px"
+    arrow.style.transform = "rotate(0deg)"
     }
 })
