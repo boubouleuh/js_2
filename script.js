@@ -88,6 +88,7 @@ btnMore.addEventListener("click", () => {
     divTop.style.visibility = "visible";
     divMain.style.marginTop = "56px"
     arrow.style.transform = "rotate(180deg)"
+    btnMore.getElementsByTagName('span').item(0).innerHTML = "more"
     } else {
     divMore.style.visibility = "visible";
     divMore.style.opacity = "90%";
@@ -96,5 +97,6 @@ btnMore.addEventListener("click", () => {
     divTop.style.visibility = "hidden";
     divMain.style.marginTop = "-150px"
     arrow.style.transform = "rotate(0deg)"
+    btnMore.getElementsByTagName('span').item(0).innerHTML = "less"
     }
 })
