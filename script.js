@@ -83,15 +83,15 @@ btnMore.addEventListener("click", () => {
     divMore.style.opacity = "0";
     divMore.style.marginBottom = "-1000px"
     btnMore.style.marginBottom = "0px";
-    divMain.style.height= "100vh";
     divTop.style.opacity = "100";
     divTop.style.visibility = "visible";
+    divMain.style.marginTop = "56px"
     } else {
     divMore.style.visibility = "visible";
     divMore.style.opacity = "90%";
     divMore.style.marginBottom = "0px";
-    divMain.style.height = "40vh";
     divTop.style.opacity = "0";
     divTop.style.visibility = "hidden";
+    divMain.style.marginTop = "-150px"
     }
 })
