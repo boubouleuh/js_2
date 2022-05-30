@@ -33,49 +33,55 @@ var divMain = document.getElementById('main');
 var divTop = document.getElementById('top');
 var arrow = document.getElementById("arrow")
 // TIME API
-fetch('http://worldtimeapi.org/api/ip')
-.then(response=>{
-    return response.json();
-})
-.then(json=> {
-        console.log(json);
-        
-    const timeZone = json.timezone; // Region
-    const abbreviation = json.abbreviation; // Meridian time
-    const dayWeekData = json.day_of_week;
-    const dayYearData = json.day_of_year;
-    const weekNumberData = json.week_number;
+
     
     // Fonction pour convertir unixtime
     // Create a new JavaScript Date object based on the timestamp
     // multiplied by 1000 so that the argument is in milliseconds, not seconds.
 
     function afficherDate() {
-        const unixTime = json.unixtime; // Unix time
-            var date = new Date(unixTime * 1000);
-            // Hours part from the timestamp
-            var hours = date.getHours();
-            // Minutes part from the timestamp
-            var minutes = "0" + date.getMinutes();
-            // Seconds part from the timestamp
-            var seconds = "0" + date.getSeconds();
+        fetch('http://worldtimeapi.org/api/ip')
+        .then(response=>{
+            return response.json();
+        })
+        .then(json=> {
+                console.log(json);
+                
+            const timeZone = json.timezone; // Region
+            const abbreviation = json.abbreviation; // Meridian time
+            const dayWeekData = json.day_of_week;
+            const dayYearData = json.day_of_year;
+            const weekNumberData = json.week_number;
+
+
+            var options = {
+                timeZone: timeZone,
+                hour: 'numeric', minute: 'numeric'
+            };
+
+            var unixTime = json.unixtime; // Unix time
+            var formatter = new Intl.DateTimeFormat([], options);
+            var date = formatter.format(new Date(unixTime * 1000));
+
 
             // Will display time in 10:30(:23) format
-            var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+            var formattedTime =  date 
             time.innerText = formattedTime;  
             console.log(afficherDate);
-    }
+            region.innerText = timeZone;
+            abbr.innerText = abbreviation;
+            regionCity.innerText = timeZone;
+            dayYear.innerText = dayYearData;
+            dayWeek.innerHTML = dayWeekData;
+            weekNumber.innerHTML = weekNumberData;
+    },
+)};
     setInterval(() => {
         afficherDate();
     }, 1000);
 
-    region.innerText = timeZone;
-    abbr.innerText = abbreviation;
-    regionCity.innerText = timeZone;
-    dayYear.innerText = dayYearData;
-    dayWeek.innerHTML = dayWeekData;
-    weekNumber.innerHTML = weekNumberData;
-});
+
+
 
 // Fonction bouton "More"
 btnMore.addEventListener("click", () => {
