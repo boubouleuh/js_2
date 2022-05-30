@@ -39,7 +39,28 @@ var arrow = document.getElementById("arrow")
     // Create a new JavaScript Date object based on the timestamp
     // multiplied by 1000 so that the argument is in milliseconds, not seconds.
 
+
+
+    function countrycode() {
+
+        var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };
+          fetch("http://ip-api.com/json/?fields=countryCode,city", requestOptions)
+            .then(response => response.json())
+            .then(result =>{ 
+                const cd = result.countryCode;
+                const city = result.city;
+                region.innerText = `in ${city}, ${cd}`;
+            })
+            .catch(error => console.log('error', error));
+            
+    }
+
+
     function afficherDate() {
+
         fetch('http://worldtimeapi.org/api/ip')
         .then(response=>{
             return response.json();
@@ -68,12 +89,12 @@ var arrow = document.getElementById("arrow")
             var formattedTime =  date 
             time.innerText = formattedTime;  
             console.log(afficherDate);
-            region.innerText = timeZone;
             abbr.innerText = abbreviation;
             regionCity.innerText = timeZone;
             dayYear.innerText = dayYearData;
             dayWeek.innerHTML = dayWeekData;
             weekNumber.innerHTML = weekNumberData;
+            countrycode()
     },
 )};
     setInterval(() => {

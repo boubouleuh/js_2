@@ -135,11 +135,10 @@ main
 }
 /*Div more*/
 #more{
-    filter:blur(50);
     align-items: center;
     display: flex;
     background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(40.7742px);
+    backdrop-filter: blur(20px);
     margin-bottom: -1000px;
     transition: 500ms;
     opacity: 0;
