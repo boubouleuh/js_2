@@ -94,11 +94,11 @@ var arrow = document.getElementById("arrow")
             dayYear.innerText = dayYearData;
             dayWeek.innerHTML = dayWeekData;
             weekNumber.innerHTML = weekNumberData;
-            countrycode()
     },
 )};
     setInterval(() => {
         afficherDate();
+        countrycode();
     }, 1000);
 
 
