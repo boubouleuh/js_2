@@ -52,7 +52,7 @@ var arrow = document.getElementById("arrow")
             .then(result =>{ 
                 const cd = result.countryCode;
                 const city = result.city;
-                region.innerText = `in ${city}, ${cd}`;
+                region.innerHTML = `in ${city}, ${cd}`;
             })
             .catch(error => console.log('error', error));
             
